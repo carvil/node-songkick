@@ -1,5 +1,7 @@
 # node-songkick
 
+[![Build Status](https://secure.travis-ci.org/carvil/node-songkick.png)](http://travis-ci.org/carvil/node-songkick)
+
 A node.js wrapper around [songkick's](http://www.songkick.com) [API](http://www.songkick.com/developer).
 
 ## Installation
