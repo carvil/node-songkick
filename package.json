@@ -16,6 +16,9 @@
      "jasmine-node": "*",
      "nock": "*"
    },
+  "engines": {
+    "node": ">=0.8.0"
+  },
   "author": "Carlos Vilhena",
-  "license": "BSD"
+  "license": "MIT"
 }
