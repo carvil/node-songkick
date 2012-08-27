@@ -4,7 +4,7 @@ Artist = require("./node-songkick/artist")
 Module entry point. Usage:
 
 var sk = require("node-songkick");
-var Songkick = new sk();
+var Songkick = new sk("<YOUR API KEY>");
 
 Then, you can use the module like this:
 
