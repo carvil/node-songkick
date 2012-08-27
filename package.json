@@ -9,7 +9,8 @@
   "keywords": [
     "songkick",
     "api",
-    "node.js"
+    "node.js",
+    "coffeescript"
   ],
   "maintainers": [
     {
