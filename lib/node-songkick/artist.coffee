@@ -2,7 +2,7 @@ Utils = require './utils'
 
 class Artist
 
-  constructor: (@api_key) ->
+  constructor: (@api_key, @default_format="json") ->
     @search = @_search
     @calendar = @_calendar
     @gigography = @_gigography
@@ -12,7 +12,7 @@ class Artist
    *
    * @param {search_term} - a string representing the search term
    * @param {options}     - an object of options:
-   *                       - query: teh query string, usually built using the search_term param
+   *                       - query: the query string, usually built using the search_term param
    *                       - apikey: the api key
    *                       - per_page: number of entries per page
    *                       - page: the page number
@@ -25,7 +25,7 @@ class Artist
    * my_callback will be called with the json response from the request.
   ###
   _search: (search_term, options, callback) ->
-    url = "/search/artists.json"
+    url = "/search/artists.#{@default_format}"
     params =
       query: escape(search_term)
       apikey: @api_key
@@ -54,8 +54,8 @@ class Artist
   ###
   _calendar: (type, id, options, callback) ->
     switch type
-      when "artist_id"       then url = "/artists/#{id}/calendar.json"
-      when "music_brainz_id" then url = "/artists/mbid:#{id}/calendar.json"
+      when "artist_id"       then url = "/artists/#{id}/calendar.#{@default_format}"
+      when "music_brainz_id" then url = "/artists/mbid:#{id}/calendar.#{@default_format}"
       else
         callback(error: "Unknown type: must be artist_id or music_brainz_id")
         return undefined
@@ -87,8 +87,8 @@ class Artist
   ###
   _gigography: (type, id, options, callback) ->
     switch type
-        when "artist_id"       then url = "/artists/#{id}/gigography.json"
-        when "music_brainz_id" then url = "/artists/mbid:#{id}/gigography.json"
+        when "artist_id"       then url = "/artists/#{id}/gigography.#{@default_format}"
+        when "music_brainz_id" then url = "/artists/mbid:#{id}/gigography.#{@default_format}"
         else
           callback(error: "Unknown type: must be either artist_id or music_brainz_id")
           return undefined

@@ -15,7 +15,7 @@ Where my_callback is a callback function defined.
 
 class Songkick
 
-  constructor: (api_key) ->
-    @artist = new Artist(api_key)
+  constructor: (api_key, default_format="json") ->
+    @artist = new Artist(api_key, default_format)
 
 module.exports = Songkick
