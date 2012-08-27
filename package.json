@@ -1,16 +1,36 @@
 {
   "name": "node-songkick",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A node.js wrapper around the songkick API.",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine-node spec/"
+    "test": "jasmine-node --coffee --verbose ./spec/"
   },
   "keywords": [
     "songkick",
     "api",
     "node.js"
   ],
+  "maintainers": [
+    {
+      "name": "Carlos Vilhena",
+      "email": "carlosvilhena@gmail.com",
+      "web": "http://carvil.github.com"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/carvil/node-songkick/issues"
+   },
+  "licenses": [{
+    "type": "MIT",
+    "url": "http://opensource.org/licenses/mit-license.php"
+  }],
+  "repositories": [{
+    "type": "git",
+    "url": "git@github.com:carvil/node-songkick.git"
+  }],
+  "dependencies": {
+  },
   "devDependencies": {
      "coffee-script": "*",
      "jasmine-node": "*",
@@ -19,6 +39,5 @@
   "engines": {
     "node": ">=0.8.0"
   },
-  "author": "Carlos Vilhena",
-  "license": "MIT"
+  "author": "Carlos Vilhena"
 }
