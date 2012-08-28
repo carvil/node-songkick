@@ -125,6 +125,10 @@ Install dependencies:
 
 And the run:
 
+    npm test
+
+or
+
     jasmine-node --coffee --verbose ./spec/
 
 ## TODO
