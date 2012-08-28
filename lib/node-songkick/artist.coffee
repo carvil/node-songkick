@@ -3,9 +3,32 @@ Utils = require './utils'
 class Artist
 
   constructor: (@api_key, @default_format="json") ->
+    @all = @_all
     @search = @_search
     @calendar = @_calendar
     @gigography = @_gigography
+
+  ###*
+   * Search for all artists
+   *
+   * @param {options}     - an object of options:
+   *                       - apikey: the api key
+   *                       - per_page: number of entries per page
+   *                       - page: the page number
+   * @param {callback}    - a callback function, which will be called with the response json
+   *
+   * Example:
+   *
+   * Artist.all({page: 2}, my_callback)
+   *
+   * my_callback will be called with the json response from the request.
+  ###
+  _all: (options, callback) ->
+    url = "/artists.#{@default_format}"
+    params =
+      apikey: @api_key
+      page: 1
+    Utils.get(url, Utils.merge(params,options), callback)
 
   ###*
    * Search for a given artist, as described here: http://www.songkick.com/developer/artist-search
