@@ -6,6 +6,24 @@ sk = new Songkick("myapikey")
 
 describe "Songkick", ->
 
+  describe "All artists", ->
+
+    describe "given a valid search for the first page of all artists", ->
+      beforeEach ->
+        placebo = nock('http://api.songkick.com/')
+          .get('/api/3.0/artists.json?apikey=myapikey&page=1')
+          .replyWithFile(200, __dirname + '/fixtures/search_all_artists.json')
+
+      it "should return the first 30 artists", (done) ->
+        sk.artist.all({page: 1}, (result) ->
+          expect(result.resultsPage.totalEntries).toEqual(266226)
+          expect(result.resultsPage.perPage).toEqual(30)
+          expect(result.resultsPage.page).toEqual(1)
+          expect(result.resultsPage.results.artist.length).toEqual(30)
+          expect(result.resultsPage.results.artist[0].displayName).toEqual("TH26")
+          done()
+        )
+
   describe "Artist search", ->
 
     describe "given a valid search for an artist is returned", ->
