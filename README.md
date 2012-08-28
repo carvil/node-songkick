@@ -38,6 +38,28 @@ After creating an instance, it is possible to query information about artists. M
 
 ### Artist
 
+#### All
+
+Assuming there is a `sk` object, it is possible to search for all artists:
+
+    sk.artist.all({ page: 1 }, callback)
+
+The params are:
+
+2. A hash of options: `page` and the `api key`;
+3. A callback function, which will handle the results.
+
+An example:
+
+    > sk.artist.all({page: 1}, function(r) {console.log(r);})
+    > { resultsPage:
+        { results: { artist: [Object] },
+          page: 1,
+          totalEntries: 266226,
+          perPage: 30 } }
+
+The `results` object will contain the first set of results. More examples in `specs/fixtures`.
+
 #### Search
 
 Assuming there is a `sk` object, it is possible to search for artists:
