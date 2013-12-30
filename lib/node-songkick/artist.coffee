@@ -50,7 +50,7 @@ class Artist
   _search: (search_term, options, callback) ->
     url = "/search/artists.#{@default_format}"
     params =
-      query: escape(search_term)
+      query: search_term
       apikey: @api_key
       per_page: 50
       page: 1
