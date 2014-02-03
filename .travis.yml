@@ -1,4 +1,5 @@
  language: node_js
+ before_install: coffee --bare --compile --output lib/ src/*.coffee && coffee --bare --compile --output lib/node-songkick src/node-songkick/*.coffee
  node_js:
    - 0.8
    - 0.9
