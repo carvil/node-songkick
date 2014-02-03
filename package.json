@@ -28,10 +28,10 @@
     "type": "MIT",
     "url": "http://opensource.org/licenses/mit-license.php"
   }],
-  "repositories": [{
+  "repository": {
     "type": "git",
     "url": "git@github.com:carvil/node-songkick.git"
-  }],
+  },
   "dependencies": {
   },
   "devDependencies": {
