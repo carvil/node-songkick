@@ -1,10 +1,12 @@
 {
   "name": "node-songkick",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "description": "A node.js wrapper around the songkick API.",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine-node --coffee --verbose ./spec/"
+    "test": "jasmine-node --coffee --verbose ./spec/",
+    "prepublish": "coffee --bare --compile --output lib/ src/*.coffee && coffee --bare --compile --output lib/node-songkick src/node-songkick/*.coffee",
+    "postpublish": "rm -rf lib"
   },
   "keywords": [
     "songkick",
@@ -26,10 +28,10 @@
     "type": "MIT",
     "url": "http://opensource.org/licenses/mit-license.php"
   }],
-  "repositories": [{
+  "repository": {
     "type": "git",
     "url": "git@github.com:carvil/node-songkick.git"
-  }],
+  },
   "dependencies": {
   },
   "devDependencies": {

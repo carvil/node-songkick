@@ -1,3 +1,9 @@
- language: node_js
- node_js:
-   - 0.8
+language: node_js
+before_install:
+ - npm install coffee-script
+ - coffee --bare --compile --output lib/ src/*.coffee && coffee --bare --compile --output lib/node-songkick src/node-songkick/*.coffee
+node_js:
+  - 0.8
+  - 0.9
+  - 0.10
+  - 0.11
