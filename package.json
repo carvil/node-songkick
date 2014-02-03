@@ -4,7 +4,9 @@
   "description": "A node.js wrapper around the songkick API.",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine-node --coffee --verbose ./spec/"
+    "test": "jasmine-node --coffee --verbose ./spec/",
+    "prepublish": "coffee --bare --compile --output lib/ src/*.coffee && coffee --bare --compile --output lib/node-songkick src/node-songkick/*.coffee",
+    "postpublish": "rm -rf lib"
   },
   "keywords": [
     "songkick",
